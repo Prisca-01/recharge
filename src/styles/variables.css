@@ -1,0 +1,67 @@
+:root {
+  /* Core palette */
+  --color-bg: #1e1425;
+  --color-surface: #2a1e33;
+  --color-surface-raised: #33243e;
+  --color-surface-overlay: #3d2c4a;
+  --color-border: rgba(169, 172, 169, 0.12);
+  --color-border-subtle: rgba(169, 172, 169, 0.07);
+
+  /* Brand */
+  --color-primary: #8b5cf6;
+  --color-primary-dim: rgba(139, 92, 246, 0.15);
+  --color-primary-glow: rgba(139, 92, 246, 0.35);
+  --color-secondary: #a78bfa;
+  --color-accent-teal: #5eead4;
+  --color-accent-amber: #f59e0b;
+  --color-accent-rose: #fb7185;
+
+  /* Text */
+  --color-text: #e2dfe8;
+  --color-text-muted: #9d97ab;
+  --color-text-dim: #6b6478;
+  --color-text-on-primary: #ffffff;
+
+  /* Semantic */
+  --color-success: #34d399;
+  --color-warning: #f59e0b;
+  --color-danger: #fb7185;
+  --color-info: #60a5fa;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
+  --shadow-primary: 0 4px 24px rgba(139, 92, 246, 0.25);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Timer ring */
+  --ring-focus: #8b5cf6;
+  --ring-break: #5eead4;
+  --ring-track: rgba(255,255,255,0.06);
+
+  /* Sidebar */
+  --sidebar-width: 64px;
+}
