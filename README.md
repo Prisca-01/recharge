@@ -1,73 +1,97 @@
-# React + TypeScript + Vite
+# 🔋 Recharge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Recharge is a productivity web application that helps users stay focused during work sessions while encouraging healthy and intentional breaks.
 
-Currently, two official plugins are available:
+## Problem
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+I often work on tasks that require deep concentration, such as newsletter research, studying, and software development. During these sessions, I either become distracted and lose momentum or continue working without any structure, which can lead to mental fatigue.
 
-## React Compiler
+Before Recharge, I relied on my phone timer or simply estimated how long I had been working. This approach provided no session tracking, progress visibility, or structured break system.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Recharge was created to provide a simple way to manage focus sessions, maintain consistency, and encourage healthier work habits.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* Focus and break countdown timer
+* Start, pause, and reset controls
+* Custom work and break durations
+* Session tracking
+* Daily focus time monitoring
+* Browser notifications for break reminders
+* Sound alerts
+* Data persistence using LocalStorage
+* Responsive user interface
+* Dark mode design
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* React
+* TypeScript
+* Vite
+* React Router
+* Context API
+* Custom Hooks
+* Plain CSS
+* LocalStorage API
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Why React?
+
+I chose React because it is the framework I am most comfortable building with. Its component-based architecture made it easy to create reusable UI elements and organize application logic effectively.
+
+React also provided a good opportunity to apply concepts such as custom hooks, Context API, state management, and component composition while building a practical product.
+
+## Project Structure
+
+```text
+src/
+├── components/
+├── pages/
+├── hooks/
+├── context/
+├── styles/
+├── utils/
+└── types/
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Clone the repository:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone <https://github.com/Prisca-01/recharge>
 ```
+
+Navigate into the project:
+
+```bash
+cd recharge
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+## Build for Production
+
+```bash
+npm run build
+```
+
+## Live Demo
+
+**Live URL:** https://recharge-liart.vercel.app/
+
+## Future Improvements
+
+* Mood check-ins after focus sessions
+* Productivity streak tracking
+* Weekly productivity analytics
+* Enhanced focus insights and reporting
