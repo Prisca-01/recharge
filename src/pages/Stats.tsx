@@ -53,7 +53,7 @@ export default function Stats() {
   const [view, setView] = useState<'week' | 'month'>('week');
 
   const weeklyStats = getWeeklyStats(sessions);
-  const chartData = weeklyStats.map((d, i) => ({
+  const chartData = weeklyStats.map((d) => ({
     day: DAYS[new Date(d.date + 'T12:00:00').getDay() === 0 ? 6 : new Date(d.date + 'T12:00:00').getDay() - 1],
     seconds: d.totalFocusSeconds,
     sessions: d.sessions,

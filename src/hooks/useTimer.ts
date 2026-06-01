@@ -30,7 +30,7 @@ export function useTimer({
   breakMinutes,
   onFocusComplete,
   onBreakComplete,
-  soundEnabled,
+  // soundEnabled,
 }: UseTimerOptions): UseTimerReturn {
   const [mode, setMode] = useState<TimerMode>('focus');
   const [status, setStatus] = useState<TimerStatus>('idle');
@@ -61,31 +61,30 @@ export function useTimer({
     }
   };
 
-  const handleComplete = useCallback(() => {
-    clearTimer();
-    setStatus('done');
+  // const handleComplete = useCallback(() => {
+  //   clearTimer();
+  //   setStatus('done');
 
-    if (mode === 'focus') {
-      const elapsed = focusStartSecondsRef.current - secondsLeft;
-      onFocusComplete(elapsed > 0 ? elapsed : focusDur);
-      setSessionCount(c => c + 1);
-      // Transition to break
-      setTimeout(() => {
-        setMode('break');
-        setSecondsLeft(breakDur);
-        setTotalSeconds(breakDur);
-        setStatus('running');
-        startInterval(breakDur, 'break');
-      }, 300);
-    } else {
-      onBreakComplete();
-      setMode('focus');
-      setSecondsLeft(focusDur);
-      setTotalSeconds(focusDur);
-      setStatus('idle');
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode, focusDur, breakDur, secondsLeft, soundEnabled]);
+  //   if (mode === 'focus') {
+  //     const elapsed = focusStartSecondsRef.current - secondsLeft;
+  //     onFocusComplete(elapsed > 0 ? elapsed : focusDur);
+  //     setSessionCount(c => c + 1);
+  //     // Transition to break
+  //     setTimeout(() => {
+  //       setMode('break');
+  //       setSecondsLeft(breakDur);
+  //       setTotalSeconds(breakDur);
+  //       setStatus('running');
+  //       startInterval(breakDur, 'break');
+  //     }, 300);
+  //   } else {
+  //     onBreakComplete();
+  //     setMode('focus');
+  //     setSecondsLeft(focusDur);
+  //     setTotalSeconds(focusDur);
+  //     setStatus('idle');
+  //   }
+  // }, [mode, focusDur, breakDur, secondsLeft, soundEnabled]);
 
   const startInterval = useCallback((startSeconds: number, currentMode: TimerMode) => {
     clearTimer();
@@ -118,7 +117,6 @@ export function useTimer({
         }
       }
     }, 1000);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focusDur, breakDur]);
 
   const start = useCallback(() => {
@@ -175,7 +173,6 @@ export function useTimer({
       setSecondsLeft(secs);
       setTotalSeconds(secs);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focusMinutes]);
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { useApp } from '../context/AppContext';
-import { useTimer } from '../hooks/UseTimer';
+import { useTimer } from '../hooks/useTimer';
 import { ProgressRing } from '../components/ProgressRing/ProgressRing';
 import { StatCard } from '../components/StatCard/StatCard';
 import { BreakScreen } from '../components/BreakScreen/BreakScreen';
