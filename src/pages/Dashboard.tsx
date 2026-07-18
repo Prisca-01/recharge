@@ -88,8 +88,6 @@ export default function Dashboard() {
 
   const handleMoodSave = (mood: MoodRating, note: string) => {
     if (pendingSession) updateMood(pendingSession.id, mood, note);
-    setPendingSession(null);
-    setShowMood(false);
   };
   const handleMoodSkip = () => {
     setPendingSession(null);
