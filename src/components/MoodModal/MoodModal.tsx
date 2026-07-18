@@ -6,7 +6,7 @@ interface MoodModalProps {
   sessionId: string;
   sessionMinutes: number;
   sessionNumber: number;
-  todayMinutes: number;      // pass from context so coach has full picture
+  todayMinutes: number;
   onSave: (mood: MoodRating, note: string) => void;
   onSkip: () => void;
 }
@@ -35,10 +35,8 @@ export function MoodModal({
   const handleSave = async () => {
     if (!selected) return;
 
-    // 1. Persist the session data immediately
     onSave(selected, note);
 
-    // 2. Switch to loading screen and fetch coach message
     setScreen('loading');
 
     try {
@@ -75,7 +73,6 @@ export function MoodModal({
     <div className="mood-overlay">
       <div className="mood-modal scale-in">
 
-        {/* ── FORM SCREEN ── */}
         {screen === 'form' && (
           <>
             <button className="mood-close" onClick={onSkip} aria-label="Close">
@@ -139,7 +136,6 @@ export function MoodModal({
           </>
         )}
 
-        {/* ── LOADING SCREEN ── */}
         {screen === 'loading' && (
           <div className="coach-loading">
             <div className="coach-spinner" />
@@ -147,7 +143,6 @@ export function MoodModal({
           </div>
         )}
 
-        {/* ── COACH MESSAGE SCREEN ── */}
         {screen === 'coach' && (
           <div className="coach-screen scale-in">
             <div className="coach-icon-wrap">
