@@ -113,6 +113,7 @@ export default function Dashboard() {
             sessionId={pendingSession.id}
             sessionMinutes={Math.round(pendingSession.duration / 60)}
             sessionNumber={todayCount}
+            todayMinutes={Math.round(todaySeconds / 60)}
             onSave={handleMoodSave}
             onSkip={handleMoodSkip}
           />
@@ -308,6 +309,7 @@ export default function Dashboard() {
           sessionId={pendingSession.id}
           sessionMinutes={Math.round(pendingSession.duration / 60)}
           sessionNumber={todayCount}
+          todayMinutes={Math.round(todaySeconds / 60)}
           onSave={handleMoodSave}
           onSkip={handleMoodSkip}
         />
