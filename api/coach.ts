@@ -1,4 +1,4 @@
-import { createGoogleGenerativeAI } from '@ai-sdk/google';
+import { createGroq } from '@ai-sdk/groq';
 import { generateText } from 'ai';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
@@ -7,8 +7,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const google = createGoogleGenerativeAI({
-    apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY ?? '',
+  const groq = createGroq({
+    apiKey: process.env.GROQ_API_KEY ?? '',
   });
 
   const { sessionDuration, sessionCount, todayMinutes, mood } = req.body;
@@ -29,9 +29,9 @@ Do not use bullet points. Do not use phrases like "As your AI coach". Just speak
 
   try {
     const { text } = await generateText({
-    model: google('gemini-2.0-flash-lite'),
-    prompt,
-    maxOutputTokens: 120,
+      model: groq('llama-3.1-8b-instant'),
+      prompt,
+      maxTokens: 120,
     });
 
     return res.status(200).json({ message: text });
