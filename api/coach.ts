@@ -31,7 +31,7 @@ Do not use bullet points. Do not use phrases like "As your AI coach". Just speak
     const { text } = await generateText({
       model: google('gemini-1.5-flash'),
       prompt,
-      maxTokens: 120,
+    maxOutputTokens: 120,
     });
 
     return res.status(200).json({ message: text });
