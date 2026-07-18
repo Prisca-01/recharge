@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ai-sdk/google": "^4.0.18",
     "@ai-sdk/groq": "^4.0.12",
     "ai": "^7.0.31",
     "react": "^19.2.6",
